@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📊 Next-Gen Telemetry Dashboard Platform
 
-## Getting Started
+A high-performance, dark-mode administrative matrix dashboard built with **Next.js 16 (App Router + Turbopack)**, **Tailwind CSS**, **Framer Motion**, and **Supabase (SSR)**. Featuring an ultra-premium, high-density editorial typographic design with choreographed fluid entrance animations.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ⚡ Tech Stack & Architecture
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* **Framework:** Next.js 16.2 (Using App Router & Turbopack Compiler Engine)
+* **Database & Auth:** Supabase Client/Server Architecture (via `@supabase/ssr`)
+* **Motion Matrix:** Framer Motion (Orchestrated staggered fluid easing parameters)
+* **Styling Engine:** Tailwind CSS (Neutral-950 high-contrast layout parameters)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧩 Dashboard Viewport Matrix (Bento Layout)
 
-## Learn More
+The application leverages a responsive **3-column Bento Grid design standard** (`grid-cols-1 md:grid-cols-2 lg:grid-cols-3`) optimized for analytical visualization:
 
-To learn more about Next.js, take a look at the following resources:
+### 1. 🧭 Structural Side-Pinned Layout Control (`/components/Sidebar.tsx`)
+A permanently left-anchored interactive console with micro-state collapse properties. Connected layout architecture handles independent page-view scrolling contexts flawlessly.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. 🛡️ Profile Verification Unit (`/components/HeroTile.tsx`)
+Spans across the entire layout head (`col-span-1 md:col-span-2 lg:col-span-3`). Integrates structured spring motion parameters (`[0.16, 1, 0.3, 1]`) to eliminate sharp page transitions on load.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. 🌊 Carousel Course Track Controller (`/app/page.tsx` & `/components/CourseCard.tsx`)
+Fetches live data records over Client Component WebSocket tunnels directly from Supabase. Includes custom physical navigation arrow nodes (`◀` and `▶`) linked via programmatic `useRef` targeting to allow smooth carousel glides on non-touch screens.
 
-## Deploy on Vercel
+### 4. 📊 High-Density Activity Index (`/components/ActivityTile.tsx`)
+An interactive animated daily bar-graph telemetry visualization. Includes smooth height staging calculations on initialization and interactive typography hover-tooltips displaying current session thresholds.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Repository Map
+
+```text
+├── app/
+│   ├── analytics/
+│   │   └── page.tsx        # High-density metrics telemetry viewport
+│   ├── courses/
+│   │   └── page.tsx        # Complete grid array layout for active tracks
+│   ├── layout.tsx          # Screen constraint engine (Pins structural layout columns)
+│   ├── loading.tsx         # Fallback shimmer layout matrix for route resolves
+│   └── page.tsx            # Main interactive Client-side Bento Dashboard stream
+├── components/
+│   ├── ActivityTile.tsx    # Responsive data chart module with tooltip triggers
+│   ├── CourseCard.tsx      # Spring-animated progress indicator items
+│   ├── HeroTile.tsx        # Welcome layout slot with entry-path animation
+│   └── Sidebar.tsx         # Fixed viewport left-anchored navigation frame
+├── utils/
+│   └── supabase/
+│       ├── client.ts       # Synchronous client-side browser hook initializer
+│       └── server.ts       # Asynchronous server-side node controller (Cookies module)
