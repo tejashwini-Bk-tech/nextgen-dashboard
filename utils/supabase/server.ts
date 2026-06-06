@@ -1,9 +1,7 @@
-import { createServerClient } from '@supabase/ssr';
+import { createServerClient } from '@supabase/ssr'; // 💡 Server file uses createServerClient
 import { cookies } from 'next/headers';
 
-// Notice we added 'async' here so we can use 'await' inside
 export async function createClient() {
-  // We add 'await' here because cookies() is now a Promise in Next.js
   const cookieStore = await cookies();
 
   return createServerClient(
@@ -20,7 +18,7 @@ export async function createClient() {
               cookieStore.set(name, value, options)
             );
           } catch {
-            // Safe catch block to prevent middleware layout crashes
+            // Safe catch block for client component boundary passes
           }
         },
       },
